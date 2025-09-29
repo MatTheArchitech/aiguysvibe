@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 import path from 'path';
 
-import { cloudflare } from '@cloudflare/vite-plugin';
+// import { cloudflare } from '@cloudflare/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 // import { nodePolyfills } from 'vite-plugin-node-polyfills';
 

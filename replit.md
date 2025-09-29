@@ -115,6 +115,8 @@ bun run db:generate          # Generate new migrations
 
 ## Deployment
 
+**Note**: This project is designed to deploy to **Cloudflare Workers**, not Replit Deployments. Replit Deployments cannot run Cloudflare Workers applications. Use Cloudflare's deployment methods instead.
+
 ### To Cloudflare Workers
 
 For production deployment to Cloudflare:
