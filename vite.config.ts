@@ -30,7 +30,7 @@ export default defineConfig({
                 svgr(),
                 cloudflare({
                         configPath: 'wrangler.jsonc',
-                        experimental: { remoteBindings: true },
+                        experimental: { remoteBindings: false },
                 }), // Add the node polyfills plugin here
                 // nodePolyfills({
                 //     exclude: [
@@ -80,6 +80,10 @@ export default defineConfig({
                 allowedHosts: true,
                 host: '0.0.0.0',
                 port: 5000,
+                watch: {
+                        usePolling: true,
+                        interval: 1000,
+                },
         },
 
         // Clear cache more aggressively
