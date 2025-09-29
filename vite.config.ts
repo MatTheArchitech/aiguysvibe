@@ -28,19 +28,12 @@ export default defineConfig({
         plugins: [
                 react(),
                 svgr(),
-                cloudflare({
-                        configPath: 'wrangler.jsonc',
-                        experimental: { remoteBindings: false },
-                }), // Add the node polyfills plugin here
-                // nodePolyfills({
-                //     exclude: [
-                //       'tty', // Exclude 'tty' module
-                //     ],
-                //     // We recommend leaving this as `true` to polyfill `global`.
-                //     globals: {
-                //         global: true,
-                //     },
-                // })
+                // Cloudflare plugin disabled for Replit local development
+                // Uncomment for full Cloudflare Workers development with wrangler dev
+                // cloudflare({
+                //      configPath: 'wrangler.jsonc',
+                //      experimental: { remoteBindings: false },
+                // }),
                 tailwindcss(),
                 // sentryVitePlugin({
                 //      org: 'cloudflare-0u',
