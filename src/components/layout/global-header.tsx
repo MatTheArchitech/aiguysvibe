@@ -3,7 +3,6 @@ import { AuthButton } from '../auth/auth-button';
 import { ThemeToggle } from '../theme-toggle';
 import { motion } from 'framer-motion';
 import { useAuth } from '@/contexts/auth-context';
-import { CloudflareLogo } from '../icons/logos';
 
 export function GlobalHeader() {
         const { user } = useAuth();
@@ -22,29 +21,27 @@ export function GlobalHeader() {
                                 {/* Main content - thinner height */}
                                 <div className="relative flex items-center justify-between px-5 h-12">
                                         {/* Left section */}
-                                        {user ? (
-                                                <motion.div
-                                                        whileTap={{ scale: 0.95 }}
-                                                        transition={{
-                                                                type: 'spring',
-                                                                stiffness: 400,
-                                                                damping: 17,
+                                        <motion.div
+                                                whileTap={{ scale: 0.95 }}
+                                                transition={{
+                                                        type: 'spring',
+                                                        stiffness: 400,
+                                                        damping: 17,
+                                                }}
+                                                className='flex items-center'
+                                        >
+                                                {user && <SidebarTrigger className="h-8 w-8 text-text-primary rounded-md hover:bg-accent/20 transition-colors duration-200" />}
+                                                <img 
+                                                        src="/aiguys-logo.png" 
+                                                        alt="The AI Guys" 
+                                                        className="flex-shrink-0 transition-all duration-300"
+                                                        style={{
+                                                                width: '40px',
+                                                                height: '40px',
+                                                                marginLeft: user ? '8px' : '0',
                                                         }}
-                                                        className='flex items-center'
-                                                >
-                                                        <SidebarTrigger className="h-8 w-8 text-text-primary rounded-md hover:bg-orange-50/40 transition-colors duration-200" />
-                                                        <CloudflareLogo
-                                                                className="flex-shrink-0 mx-auto transition-all duration-300"
-                                                                style={{
-                                                                        width: '28px' ,
-                                                                        height: '28px',
-                                                                        marginLeft: '8px',
-                                                                }}
-                                                        />
-                                                </motion.div>
-                                        ) : (
-                                                <div></div>
-                                        )}
+                                                />
+                                        </motion.div>
 
                                         {/* Right section */}
                                         <motion.div
